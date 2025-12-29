@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Tech Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">TechWorld</div>
+            <ul class="nav-links">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#summary" class="nav-link">Services</a></li>
+                <li><a href="#form" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Background Effects -->
+    <canvas id="matrix-canvas" class="background-effect"></canvas>
+    <div class="grid-background background-effect"></div>
+    <canvas id="particles-canvas" class="background-effect"></canvas>
+    <div class="code-background background-effect"></div>
+    <div class="moving-background background-effect"></div>
+
+    <!-- Portal -->
+    <div id="portal" class="portal">
+        <div class="portal-inner">
+            <div class="portal-particles"></div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <h1>Welcome to the <span>Digital CS World</span></h1>
+        <p class="subheading">Explore the tech universe</p>
+        <button class="book-call-btn" id="book-call-btn">Book a Call</button>
+    </section>
+
+   <section id="about" class="about-section">
+    <div class="info-boxes-container">
+        <!-- Our Tracks Title -->
+        <div class="our-tracks">
+            <h2>Our Tracks</h2>
+        </div>
+
+
+        
+<!-- Section: Our Tracks -->
+<section id="tracks" class="about-section">
+    <div class="info-boxes">
+        <div class="info-box">
+            <img src="webdev.png" alt="Web Dev Logo" class="box-logo">
+            <h3>Web Development</h3>
+            <p>Frontend, Backend, Full Stack, Deployment, Security Basics</p>
+        </div>
+        <div class="info-box">
+            <img src="Mobile-dev.png" alt="Mobile Logo" class="box-logo">
+            <h3>Mobile App Development</h3>
+            <p>Android, iOS, Flutter, React Native</p>
+        </div>
+        <div class="info-box">
+            <img src="Desktop-App.png" alt="Desktop Logo" class="box-logo">
+            <h3>Desktop Applications</h3>
+            <p>Windows, macOS, Linux, C++, C#, Java, Python</p>
+        </div>
+        <div class="info-box">
+            <img src="Software Engineer.png" alt="Software Logo" class="box-logo">
+            <h3>Software Engineering / Systems</h3>
+            <p>System Design, Scalable Systems, Microservices, Distributed Systems</p>
+        </div>
+        <div class="info-box">
+            <img src="Database.png" alt="Database Logo" class="box-logo">
+            <h3>Database & Data Engineering</h3>
+            <p>SQL, NoSQL, Data Modeling, Optimization</p>
+        </div>
+        <div class="info-box">
+            <img src="Cloud&DevOps.png" alt="Cloud Logo" class="box-logo">
+            <h3>Cloud Computing & DevOps</h3>
+            <p>AWS, Azure, GCP, CI/CD, Docker, Kubernetes</p>
+        </div>
+        <div class="info-box">
+            <img src="AI.png" alt="AI Logo" class="box-logo">
+            <h3>Artificial intelligence</h3>
+            <p>Machine Learning, Deep Learning, NLP, Computer Vision, AI APIs</p>
+        </div>
+        <div class="info-box">
+            <img src="GameDEV.png" alt="Game Dev Logo" class="box-logo">
+            <h3>Game Development</h3>
+            <p>Unity, Unreal Engine, 2D / 3D Games</p>
+        </div>
+    </div>
+</section>
+
+</section>
+
+        <!-- حطه قبل البوكسات أو في أي section تحب -->
+<div class="counters">
+    <div class="counter">
+        <h2 class="count" data-target="2550">0</h2>
+        <p>Projects Completed</p>
+    </div>
+    <div class="counter">
+        <h2 class="count" data-target="1100">0</h2>
+        <p>Clients</p>
+    </div>
+</div>
+
+
+
+
+    <!-- Summary Section -->
+    <section id="summary" class="summary-section">
+        <div class="summary-container">
+            <div class="summary-image">
+                <img src="img.png" alt="Company Image" class="fade-in">
+            </div>
+            <div class="summary-text fade-in">
+                <h2>Our Mission</h2>
+                <p>We are dedicated to pushing the boundaries of technology, delivering premium solutions that empower businesses and individuals in the digital age.</p>
+            </div>
+        </div>
+    </section>
+<section class="build-section">
+  <div class="build-container">
+    <h2 class="build-title">Let’s Build Something Powerful</h2>
+    <p class="build-subtitle">
+      Tell us about your idea and choose the track you’re interested in.
+    </p>
+    <button id="build-btn" class="build-btn">
+      Start Your Journey
+    </button>
+  </div>
+</section>
+
+
+    <!-- Form Section -->
+    <section id="form" class="form-section">
+        <div class="form-layout">
+            <div class="form-container">
+                <h2>Contact Us</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+ <div class="form-group">
+    <label for="track">Choose Track</label>
+    <select id="track" name="track" required>
+        <option value="">Select a Track</option>
+        <option>Web Development</option>
+        <option>Mobile App Development</option>
+        <option>Software Engineering</option>
+        <option>AI & Machine Learning</option>
+        <option>Cloud & DevOps</option>
+        <option>Automation & Scripting</option>
+        <option>Game Development</option>
+    </select>
+</div>
+
+
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submit-btn">Submit</button>
+                </form>
+            </div>
+            <div class="form-image-container">
+                <img src="co.png" alt="Contact Image" class="form-image">
+                <p class="thank-you-text">Thank You</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <p class="copyright">
+            © 2025 YourCompany. All Rights Reserved.
+        </p>
+
+        <div class="contact-info">
+            <a href="mailto:contact@yourcompany.com" class="contact-link">
+                <i class="fas fa-envelope"></i> contact@yourcompany.com
+            </a>
+            <a href="tel:+201234567890" class="contact-link">
+                <i class="fas fa-phone"></i> +20 123 456 7890
+            </a>
+        </div>
+
+        <div class="social-links">
+            <a href="#" class="social facebook" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social instagram" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social linkedin" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="social github" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+
+    <button id="back-to-top">⬆</button>
+
+
+
+    <script src="script.js"></script>
+    <!-- Chat Toggle Button -->
+<div id="chat-toggle">💬</div>
+
+<!-- Chat Bot -->
+<div id="chatbot">
+    <div class="chat-header">
+        <span>CS Assistant</span>
+        <button id="chat-close">✖</button>
+    </div>
+
+    <div class="chat-body" id="chatBody">
+        <div class="bot-msg">
+            👋 Welcome! Choose an option below
+        </div>
+
+        <div class="bot-options">
+            <button data-answer="services">Our Services</button>
+            <button data-answer="tracks">Our Tracks</button>
+            <button data-answer="contact">Contact Info</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+

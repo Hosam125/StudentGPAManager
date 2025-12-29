@@ -1,0 +1,1019 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Simple, clean font for tech vibe */
+    background-color: #2B2B2B; /* Dark background */
+    color: #EDEDED; /* Light text */
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+
+}
+
+
+/* Newly Added: Navbar Styles */
+/* Minimal, sleek navbar with dark theme and red hover highlights */
+/* Updated: Professional and modern look with smooth hover effects */
+.navbar {
+    position: fixed; /* Fixed at top for smooth scroll */
+    top: 0;
+    width: 100%;
+    background-color: transparent; /* Dark background */
+    z-index: 1001; /* Above portal and content */
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); */
+    /* border-bottom: 1px solid rgba(237, 237, 237, 0.1); Subtle border for modern look */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px; /* Increased padding for better spacing */
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #EDEDED; /* Light text */
+    letter-spacing: 1px; /* Modern spacing */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Increased gap for professional spacing */
+}
+
+.nav-link {
+    color: #EDEDED; /* Light text */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500; /* Medium weight for modern feel */
+    transition: all 0.3s ease; /* Smooth transition */
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';    
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #B10422; /* Red underline on hover */
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #B10422; /* Red highlight on hover */
+}
+
+.nav-link:hover::after {
+    width: 100%; /* Expand underline on hover */
+}
+
+/* Background Effects (Existing, Updated for Subtle CS/Coding Style) */
+/* All background effects are positioned absolutely behind content with low z-index */
+/* Matrix code rain now includes subtle code snippets for a coding background */
+/* Newly Added: Soft Particles Canvas for very subtle abstract elements */
+/* Newly Added: Code Background Overlay for light CS/coding touches */
+/* Newly Added: Moving Background for dynamic gradient and particle effect */
+.background-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Behind all content */
+    opacity: 0.1; /* Very subtle to not interfere with readability */
+    pointer-events: none; /* Prevent interference with interactions */
+}
+
+/* Newly Added: Code Background Overlay */
+/* Subtle, light background with code-like patterns for a tech feel, non-intrusive */
+.code-background {
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(177, 4, 34, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(177, 4, 34, 0.02) 0%, transparent 50%),
+        linear-gradient(45deg, rgba(237, 237, 237, 0.01) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(237, 237, 237, 0.01) 25%, transparent 25%);
+    background-size: 20px 20px, 30px 30px, 10px 10px, 10px 10px;
+    background-position: 0 0, 0 0, 0 0, 5px 5px;
+    animation: code-shift 30s linear infinite; /* Slow, subtle shift for motion */
+}
+
+@keyframes code-shift {
+    0% { background-position: 0 0, 0 0, 0 0, 5px 5px; }
+    100% { background-position: 20px 20px, 30px 30px, 10px 10px, 15px 15px; }
+}
+
+/* 3D Moving Grid (Existing, Kept Subtle) */
+/* Creates a subtle perspective grid that moves slowly for depth */
+.grid-background {
+    background-image: 
+        linear-gradient(rgba(177, 4, 34, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(177, 4, 34, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: grid-move 20s linear infinite; /* Slow movement for depth */
+}
+
+@keyframes grid-move {
+    0% { transform: translate(0, 0) perspective(1000px) rotateX(0deg); }
+    100% { transform: translate(-50px, -50px) perspective(1000px) rotateX(5deg); }
+}
+
+/* Newly Added: Moving Background */
+/* Creates a subtle moving gradient and particle-like effect */
+/* Uses CSS animations for smooth, lightweight motion */
+.moving-background {
+    background: linear-gradient(45deg, #2B2B2B, #1A1A1A, #2B2B2B); /* Dark gradient base */
+    background-size: 400% 400%; /* Larger for animation */
+    animation: gradient-shift 10s ease-in-out infinite; /* Slow gradient movement */
+}
+
+.moving-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(177, 4, 34, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(177, 4, 34, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(177, 4, 34, 0.1) 0%, transparent 50%);
+    background-size: 200px 200px, 150px 150px, 100px 100px;
+    animation: particle-float 15s linear infinite; /* Floating particle effect */
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes particle-float {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(50px, -50px) rotate(90deg); }
+    50% { transform: translate(-50px, 50px) rotate(180deg); }
+    75% { transform: translate(100px, -100px) rotate(270deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+/* Portal Entrance Effect (Existing) */
+/* The portal starts as a small circle in the center and expands to reveal the digital world */
+/* Positioned above everything initially, then animates away */
+.portal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2B2B2B; /* Dark background to cover content initially */
+    z-index: 1000; /* Above all content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: portal-open 3s ease-in-out forwards; /* Cinematic opening animation */
+}
+
+.portal-inner {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(177, 4, 34, 0.8) 0%, rgba(43, 43, 43, 0.9) 70%, transparent 100%); /* Glowing red edges */
+    box-shadow: 0 0 50px #B10422; /* Red glow accent */
+    animation: portal-expand 3s ease-in-out forwards; /* Expands the portal circle */
+}
+
+@keyframes portal-open {
+    0% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; } /* Fade out and hide after opening */
+}
+
+@keyframes portal-expand {
+    0% { width: 0; height: 0; }
+    50% { width: 200px; height: 200px; } /* Midway expansion */
+    100% { width: 200vw; height: 200vw; } /* Expands beyond screen to reveal */
+}
+
+/* Portal Particles (Existing) */
+/* Subtle light burst effect when portal opens */
+.portal-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(177, 4, 34, 0.5) 0%, transparent 50%);
+    animation: particle-burst 3s ease-in-out forwards;
+}
+     
+
+
+
+@keyframes particle-burst {
+    0% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(2); }
+}
+
+/* Section 1: Hero Section */
+/* Updated: Button moved below text, added smooth transition for appearance */
+/* Updated: Hero text appears faster on page load */
+.hero {
+    height: 100vh; /* Full-screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2B2B2B; /* Dark background */
+    position: relative;
+    text-align: center;
+    padding: 0 20px;
+    padding-top: 80px; /* Added padding for fixed navbar */
+    z-index: 1; /* Above background effects */
+
+  background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("#VirtualReality\ #Virtual.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+.hero h1 {
+    font-size: 4rem; /* Big bold headline */
+    font-weight: bold;
+    margin-bottom: 20px;
+    opacity: 0; /* Initially hidden for animation */
+    transform: translateY(50px); /* Slide-up effect */
+    transition: all 0.3s ease; /* Speeded up for faster appearance */
+    
+}
+
+.hero h1 span {
+    color: #B10422; /* Red accent highlight */
+}
+
+.hero.animate h1 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero .subheading {
+    font-size: 1.5rem; /* Smaller than h1 */
+    color: #EDEDED; /* Light text */
+    margin-bottom: 30px; /* Increased margin for button below */
+    opacity: 0; /* Initially hidden for animation */
+    transform: translateY(50px); /* Slide-up effect */
+    transition: all 0.3s ease 0.1s; /* Speeded up, reduced delay for faster appearance */
+}
+
+.hero.animate .subheading {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero .book-call-btn {
+    background-color: #B10422; /* Primary red */
+    color: #EDEDED; /* Light text */
+    border: none;
+    padding: 15px 30px; /* Slightly larger for prominence */
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Smooth transition */
+    opacity: 0; /* Initially hidden for smooth appearance */
+    transform: translateY(50px);
+    box-shadow: 0 4px 15px rgba(177, 4, 34, 0.3); /* Professional shadow */
+}
+
+.hero.animate .book-call-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero .book-call-btn:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+    box-shadow: 0 0 20px #B10422; /* Enhanced glow effect using primary red */
+}
+
+/* Section 2: About / Company Info (Updated) */
+/* Four square boxes slightly larger, in a single row with alternating slide animations */
+.about-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #1d1c1c;
+    z-index: 1;
+}
+
+
+/* ---------------- Our Tracks Hover Effect ---------------- */
+.our-tracks h2 {
+    font-size: 2.5rem;
+    color: #B10422;
+    text-align: center;
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.our-tracks h2:hover {
+    text-shadow: 0 0 10px #e0e0e0, 0 0 20px #e0e0e0, 0 0 30px #e0e0e0;
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: translate(0px, 0px) rotate(0deg); }
+    20% { transform: translate(-2px, 1px) rotate(-1deg); }
+    40% { transform: translate(2px, -1px) rotate(1deg); }
+    60% { transform: translate(-2px, 1px) rotate(-1deg); }
+    80% { transform: translate(2px, -1px) rotate(1deg); }
+    100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+
+.box-logo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+
+.info-boxes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four boxes in a single row */
+    grid-template-rows: repeat(2,auto);
+    gap: 20px;
+    max-width: 1400px; /* Increased for larger boxes */
+    width: 100%;
+}
+
+
+
+.info-box {
+    background-color: rgba(237, 237, 237, 0.05);
+    padding: 30px; /* Increased padding for larger size */
+    border-radius: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: all 1s ease;
+    aspect-ratio: 1; /* Keeps boxes square */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #B10422;
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    font-size: 0.9rem;
+    color: #EDEDED;
+}
+
+.info-box.slide-left {
+    transform: translateX(-100px);
+}
+
+.info-box.slide-right {
+    transform: translateX(100px);
+}
+
+.info-box.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Section 3: Company Summary (Existing) */
+/* Image and text with fade/slide animations */
+.summary-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #1d1c1c;
+    z-index: 1;
+}
+
+.summary-container {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    gap: 50px;
+    align-items: center;
+}
+
+.summary-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+.summary-text {
+    flex: 1;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease 0.5s; /* Delayed for sequential animation */
+}
+
+.summary-text h2 {
+    color: #B10422;
+    margin-bottom: 20px;
+}
+
+.summary-container.animate .summary-image img,
+.summary-container.animate .summary-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Section 4: Form Section */
+/* Updated: Form moved to left, image and "Thank You" text to right */
+.form-section {
+    min-height: 100vh; /* Full height for scroll effect */
+    background-color: #1d1c1c; /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    opacity: 0; /* Initially hidden for animation */
+    transform: translateY(50px); /* Slide-up effect */
+    transition: all 1s ease;
+    z-index: 1; /* Above background effects */
+}
+
+.form-section.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.form-layout {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.form-container {
+    flex: 1;
+    background-color: rgba(237, 237, 237, 0.05); /* Subtle light overlay for form */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Premium shadow */
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.form-container:hover {
+    box-shadow: 0 25px 60px rgba(111, 110, 110, 0.7);
+    transform: translateY(-4px);
+    transition: 0.4s ease;
+}
+
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #2B2B2B; /* Dark input background */
+    border: 1px solid #EDEDED; /* Light border */
+    color: #EDEDED; /* Light text */
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease; /* Smooth transition for hover */
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+    border-color: #B10422; /* Red border on hover */
+    background-color: rgba(177, 4, 34, 0.1); /* Subtle red background on hover */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #B10422; /* Red focus effect */
+    outline: none;
+    background-color: rgba(177, 4, 34, 0.1); /* Subtle red background on focus */
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #B10422; /* Primary red */
+    color: #EDEDED; /* Light text */
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Smooth transition */
+    box-shadow: 0 4px 15px rgba(177, 4, 34, 0.3); /* Professional shadow */
+}
+
+.submit-btn:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+    box-shadow: 0 0 20px #B10422; /* Enhanced glow effect */
+}
+
+.form-image-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.thank-you-text {
+    font-size: 1.5rem;
+    color: #EDEDED;
+    text-align: center;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column; /* Stack links on mobile */
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; /* Smaller headline on mobile */
+    }
+
+    .hero .subheading {
+        font-size: 1.2rem; /* Smaller subheading on mobile */
+    }
+
+    .info-boxes {
+        grid-template-columns: repeat(2, 1fr); /* Stack to two columns on mobile for responsiveness */
+        gap: 10px;
+    }
+
+    .summary-container {
+        flex-direction: column; /* Stack image and text on mobile */
+        gap: 20px;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+}
+
+/* Scroll Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+.fade-in.animate {
+    opacity: 1;
+    transform: translateY(0);
+    
+}
+/* Newly Added: Footer Section */
+/* Professional, clean, minimal footer with dark background, light text, and red hover accents */
+/* Placed at the bottom of the page, responsive on desktop and mobile */
+.footer {
+    background: #0d0d0d;
+    padding: 25px 10%;
+    border-top: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.copyright {
+    color: #aaa;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
+    background: rgba(255, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Hover Effect */
+.social:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+}
+
+/* Platform Colors on Hover */
+.social.facebook:hover {
+    background: #1877f2;
+}
+.social.instagram:hover {
+    background: #e1306c;
+}
+.social.linkedin:hover {
+    background: #0a66c2;
+}
+.social.github:hover {
+    background: #333;
+}
+.social::after {
+    content: attr(aria-label);
+    position: absolute;
+    bottom: 120%;
+    background: #000;
+    padding: 5px 8px;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.social:hover::after {
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+.footer::before {
+    content: "";
+    display: block;
+    height: 1px;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design for Footer */
+/* On mobile, stack elements vertically for better readability */
+
+    .copyright,
+    .footer-link,
+    .social-links {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .contact-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 14px;
+}
+
+.contact-link {
+    color: #aaa;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.contact-link i {
+    color: #B10422; /* أيقونة حمراء */
+    font-size: 16px;
+}
+
+.contact-link:hover {
+    color: #fff;
+    transform: translateY(-3px);
+    text-shadow: 0 0 5px #B10422;
+}
+
+
+/* Our Tracks Section */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #EDEDED;
+    margin-bottom: 40px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.section-title:hover {
+    text-shadow: 0 0 15px rgba(255,255,255,0.5);
+    transform: translateX(-2px) rotate(-1deg);
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0) rotate(0deg); }
+    25% { transform: translateX(-2px) rotate(-1deg); }
+    50% { transform: translateX(2px) rotate(1deg); }
+    75% { transform: translateX(-2px) rotate(-1deg); }
+    100% { transform: translateX(0) rotate(0deg); }
+}
+
+.info-boxes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.info-box {
+    background-color: rgba(237, 237, 237, 0.05);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.info-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(255,255,255,0.05);
+}
+
+.box-logo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.info-box h3 {
+    color: #B10422;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.info-box p {
+    color: #EDEDED;
+    font-size: 0.9rem;
+}
+
+/* CSS for counters */
+.counters {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    margin: 50px 0;
+}
+.counter h2 {
+    font-size: 3rem;
+    color: #B10422;
+}
+.counter p {
+    color: #EDEDED;
+    font-size: 1rem;
+    text-align: center;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    padding: 10px 15px;
+    font-size: 20px;
+    background-color: #B10422;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    display: none; /* hidden by default */
+    z-index: 999;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    background: #2B2B2B;
+    border: 1px solid #444;
+    color: #EDEDED;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.form-group select:hover,
+.form-group select:focus {
+    border-color: #B10422;
+    box-shadow: 0 0 10px rgba(177,4,34,0.4);
+    outline: none;
+}
+/* Build Section */
+.build-section {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1A1A1A; /* Dark background */
+    padding: 50px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.build-container {
+    text-align: center;
+    color: #EDEDED;
+    max-width: 700px;
+    animation: fadeUp 1s ease forwards;
+    opacity: 0; /* Will animate in */
+}
+
+.build-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #B10422; /* Red accent */
+    transition: all 0.3s ease;
+}
+
+.build-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    color: #ccc;
+    transition: all 0.3s ease;
+}
+
+.build-btn {
+    padding: 15px 35px;
+    font-size: 18px;
+    background-color: #B10422;
+    color: #EDEDED;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(177, 4, 34, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.build-btn::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transform: skewX(-20deg);
+    transition: all 0.5s ease;
+}
+
+.build-btn:hover::after {
+    left: 200%;
+}
+
+.build-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(177,4,34,0.5);
+}
+
+/* Animation */
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Chat Toggle */
+#chat-toggle {
+    position: fixed;
+    left: 25px;
+    bottom: 25px;
+    width: 55px;
+    height: 55px;
+    background: #B10422;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 22px;
+    box-shadow: 0 0 15px rgba(177,4,34,.6);
+    z-index: 9999;
+}
+
+/* Chat Box */
+#chatbot {
+    position: fixed;
+    left: 25px;
+    bottom: 90px;
+    width: 320px;
+    background: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(0,0,0,.7);
+    transform: scale(0);
+    opacity: 0;
+    transition: .3s ease;
+    z-index: 9999;
+}
+
+#chatbot.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Header */
+.chat-header {
+    background: #B10422;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* Body */
+.chat-body {
+    padding: 15px;
+    font-size: 14px;
+}
+
+.bot-msg {
+    background: rgba(255,255,255,.05);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.bot-options button {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #B10422;
+    color: #fff;
+    padding: 8px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.bot-options button:hover {
+    background: #B10422;
+}
