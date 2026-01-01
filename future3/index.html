@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hosam | Portfolio</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+<header class="navbar">
+  <div class="logo">Hosam</div>
+
+  <nav class="nav-links">
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+    <button id="themeToggle">🌙</button>
+    <div class="lang-switcher">
+      <button onclick="setLanguage('en')" class="active">EN</button>
+      <button onclick="setLanguage('ar')">AR</button>
+    </div>
+  </nav>
+
+  <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+</header>
+
+
+  <!-- HERO -->
+  <section class="hero reveal">
+    <h1>Hi, I'm Hosam</h1>
+    <h2>Creative Designer & Tech Branding Specialist</h2>
+    <p>
+      I design modern logos and social media visuals that help brands stand out.
+    </p>
+
+    <div class="buttons">
+      <a href="#portfolio" class="btn">View My Work</a>
+      <a href="#contact" class="btn secondary">Contact Me</a>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="reveal">
+    <h2>Portfolio</h2>
+
+    <h3>Logos</h3>
+    <div class="grid">
+      <div class="card">NexaTech Logo</div>
+      <div class="card">Logizy Logo</div>
+      <div class="card">FutureX Logo</div>
+      <div class="card">ByteCore Logo</div>
+      <div class="card">Personal Logo</div>
+    </div>
+
+    <h3 class="space">Social Media Posts</h3>
+    <div class="grid">
+      <div class="card">Tech Startup Post</div>
+      <div class="card">AI Post</div>
+      <div class="card">Branding Post</div>
+      <div class="card">Web Development Post</div>
+      <div class="card">Motivation Quote</div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+<section id="about">
+  <div class="about-container reveal">
+    <h2>About Me</h2>
+    <p>
+      I’m Hosam, a creative designer specialized in clean and modern visuals. 
+      I help startups and businesses craft strong brand identities that stand out in a competitive market.
+    </p>
+    <p>
+      With a passion for design and technology, I combine creativity with strategy to deliver impactful results.
+    </p>
+    <a href="#contact" class="btn">Get in Touch</a>
+  </div>
+</section>
+
+
+  <!-- SERVICES -->
+  <section class="reveal">
+    <h2>Services</h2>
+    <div class="grid">
+      <div class="card">Logo Design</div>
+      <div class="card">Social Media Design</div>
+      <div class="card">Brand Identity</div>
+      <div class="card">Startup Branding</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="reveal">
+    <h2>Contact</h2>
+    <p>Email: hosam@email.com</p>
+    <p>Instagram: @hosam.design</p>
+  </section>
+
+  <!-- Footer -->
+<footer>
+  <p>© 2026 Hosam. All Rights Reserved.</p>
+  <div class="footer-links">
+    <a href="mailto:hosam@email.com" class="email">
+      <span class="icon">📧</span> hosam@email.com
+    </a>
+    <a href="https://instagram.com/hosam.design" target="_blank" class="instagram">
+      <span class="icon">I</span> Instagram
+    </a>
+    <a href="https://www.behance.net/" target="_blank" class="behance">
+      <span class="icon">B</span> Behance
+    </a>
+    <a href="https://www.linkedin.com/" target="_blank" class="linkedin">
+      <span class="icon">L</span> LinkedIn
+    </a>
+    <a href="https://wa.me/201234567890" target="_blank" class="whatsapp">
+      <span class="icon">W</span> WhatsApp
+    </a>
+  </div>
+</footer>
+<canvas id="bgParticles"></canvas>
+<!-- Back to Top Button -->
+<button id="backToTop">↑</button>
+
+
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
